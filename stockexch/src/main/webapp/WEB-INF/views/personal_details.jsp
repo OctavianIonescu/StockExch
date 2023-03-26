@@ -1,8 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"%>
 <%@ page import="java.util.List"%>
-<%@ page import="com.book.models.User" %>
-<%@ page import="com.book.models.Order" %>
+<%@ page import="com.stockex.stockexch.Entities.User" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,29 +16,10 @@ pageEncoding="UTF-8"%>
 		<a href="/ch">Edit Personal Details</a>
 	</nav>
 	<div> <% User user = (User) request.getSession().getAttribute("user"); %>
-		<br>First Name: <%= user.getFirstName() %></br>
-		<br>Last Name: <%= user.getLastName() %></br>
-		<br>Address: <%= user.getAddress() %></br>
+		<br>First Name: <%= user.getFirst_name() %></br>
+		<br>Last Name: <%= user.getLast_name() %></br>
+		<br>Address: <%= user.getUser_address() %></br>
 		<br>Email: <%= user.getEmail() %></br>
 	</div>
-	<h2>PAST ORDERS</h2>
-	<table style="width:95%;margin-left:auto;margin-right:auto;">
-		<tr>
-			<th>Order id</th>
-			<th>Order Date</th>
-			<th>Price</th>
-		</tr>
-		<%	List<Order> orders = (List<Order>) request.getSession().getAttribute("orderList");
-			for(Order o: orders) {
-				%>
-				<tr>
-					<td><%= o.getOrderID() %></td>
-					<td><%= o.getOrderDate().toString() %></td>
-					<td><%= o.getTotalPrice() %></td>
-				</tr>
-				<% } %>
-				
-			</table>
-			
-		</body>
-		</html>
+</body>
+</html>
