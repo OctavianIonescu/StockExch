@@ -91,4 +91,46 @@ public class StockExchController {
         } else return "register";
     }
     
+    @GetMapping("/pd")
+    public String details(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException  {
+        userSession = request.getSession(true);
+        User user = (User) userSession.getAttribute("user");
+        System.out.println(user.getU_ID());
+        return "personal_details";
+    }
+    
+    @RequestMapping(value="/ch", method={RequestMethod.GET,RequestMethod.POST})
+    public String ch(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {	
+        userSession = request.getSession(true);
+        User user = (User) userSession.getAttribute("user");
+        if(request.getParameter("saveChanges") != null) {
+            String firstName = (String) request.getParameter("firstName");
+            System.out.println(firstName);
+            if(firstName != ""){
+                userService.updateUserFirstNameByUser(user, firstName);
+            }
+            String lastName = (String) request.getParameter("lastName");
+            System.out.println(lastName);
+            if(lastName != ""){
+                userService.updateUserLastNameByUser(user, lastName);
+            }
+            String address = (String) request.getParameter("address");
+            System.out.println(address);
+            if(address != ""){
+                userService.updateUserAddressByUser(user, address);
+            }
+            String pass = (String) request.getParameter("pass");
+            System.out.println(pass);
+            if(pass != ""){
+                userService.updateUserPasswordByUser(user, pass);
+            }
+            String email = (String) request.getParameter("email");
+            System.out.println(email);
+            if(email != ""){
+                userService.updateUserEmailByUser(user, email);
+            }
+            return "personal_details";
+        } else return "change_details";
+    }
+    
 }
