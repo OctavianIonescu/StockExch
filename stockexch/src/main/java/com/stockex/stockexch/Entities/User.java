@@ -41,9 +41,9 @@ public class User {
     @NotNull
     private String user_password;
 
-    /*@OneToMany(mappedBy = "user")
-    private List<Accounts> accounts;
-    */
+    @OneToMany(mappedBy = "user")
+    private List<Orders> orders;
+    
 
     public User(String first_name, String last_name, String user_address, String email, String user_password) {
         this.first_name = first_name;
