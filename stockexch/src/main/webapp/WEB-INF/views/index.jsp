@@ -12,9 +12,8 @@ pageEncoding="UTF-8"%>
             crossorigin="anonymous"
             alt="Bootstrap CDN"
         />
-        <title>Banking Application Landing Page</title>
+        <title>Trading Application Landing Page</title>
         <style>
-            /* add comments here to describe each section */
             body {
                 padding: 50px;
                 background-color: #222;
@@ -30,6 +29,9 @@ pageEncoding="UTF-8"%>
 
             h1 {
                 margin: 0;
+				font-style: oblique;
+				font-family: verdana;
+                font-weight: bold;
             }
 
             nav ul {
@@ -47,7 +49,7 @@ pageEncoding="UTF-8"%>
                 text-decoration: none;
                 color: #004186;
                 font-weight: bold;
-				font-size: 18px;
+                font-size: 18px;
             }
 
             main section {
@@ -130,22 +132,36 @@ pageEncoding="UTF-8"%>
             <main>
                 <section>
                     <h2>About</h2>
-                    <p>insert facts about this platform</p>
+                    <p>
+                        Welcome to ON TRADING, the premier electronic trading
+                        platform for online stock traders. Our platform provides
+                        clients with the ability to place orders to buy and sell
+                        stocks, view the status of their orders, and access
+                        their trade and order history, all from the convenience
+                        of their own devices. <br />
+                        Our platform offers a wide range of trading options,
+                        including equities, options, and futures, as well as
+                        access to real-time market data and news. With ON
+                        TRADING, clients have everything they need to stay
+                        informed and stay ahead of the market.
+                    </p>
                     <a href="/login" class="btn-primary">Get Started</a>
                 </section>
                 <section>
                     <h2>Secure and reliable</h2>
                     <p>
-                        Our platform uses the latest security technology to keep
-                        your data safe and secure. With 24/7 monitoring and
-                        fraud protection, you can rest easy knowing that your
-                        account is protected. Our dedicated support team is
-                        available 24/7 to assist you with any questions or
-                        concerns you may have. Whether you need help with a
-                        order or want to report a suspicious activity, our team
-                        is always ready to help you.
+                        At ON TRADING, we are committed to providing our clients
+                        with a seamless trading experience that is both secure
+                        and user-friendly. With our intuitive interface and
+                        powerful trading tools, clients can easily manage their
+                        portfolios and make informed trading decisions. <br />
+                        We pride ourselves on our commitment to customer
+                        service. Our team of experienced professionals is
+                        dedicated to providing our clients with personalized
+                        support and guidance every step of the way.<br />
                     </p>
                     <a href="#" class="btn-secondary">Learn More</a>
+				<!-- </p>Thank you for choosing ON TRADING, the ultimate electronic trading platform for online stock traders.</p> -->
                 </section>
             </main>
             <footer>
