@@ -1,8 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"%>
 <%@ page import="java.util.List"%>
-<%@ page import="com.book.models.User" %>
-<%@ page import="com.book.models.Order" %>
+<%@ page import="com.stockex.stockexch.Entities.User" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,9 +17,9 @@ pageEncoding="UTF-8"%>
 	<div style="flex-direction:column; justify-content:center; align-items: center;">
 		<form method="POST">
 			<div> <% User user = (User) request.getSession().getAttribute("user"); %>
-                <br>First Name: <%= user.getFirstName() %></br> Change Firstname  <input type="text" name="firstName"/><br>
-                <br>Last Name: <%= user.getLastName() %></br> Change Lastname  <input type="text" name="lastName"/><br>
-                <br>Address: <%= user.getAddress() %></br> Change Address <input type="text" name="address"/><br>
+                <br>First Name: <%= user.getFirst_name() %></br> Change Firstname  <input type="text" name="firstName"/><br>
+                <br>Last Name: <%= user.getLast_name() %></br> Change Lastname  <input type="text" name="lastName"/><br>
+                <br>Address: <%= user.getUser_address() %></br> Change Address <input type="text" name="address"/><br>
                 <br>Email: <%= user.getEmail() %></br> Change Email  <input type="text" name="email"/><br>
                 <br>Change Password <input type="password" name="pass"/><br>
                 <br><input type="submit" name="saveChanges" value="Save Changes"/>
