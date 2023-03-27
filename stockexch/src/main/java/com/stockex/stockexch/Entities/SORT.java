@@ -13,10 +13,18 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 public class SORT {
+    
+    public SORT(String sORT_name) {
+        SORT_name = sORT_name;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "SORT_ID")
     private int SORT_ID;
+
+    @Column(name = "SORT_name")
+    private String SORT_name; 
 
     @OneToMany(mappedBy = "stock_SORT")
     private List<Exchange> exchange;

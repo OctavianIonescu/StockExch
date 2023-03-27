@@ -26,4 +26,9 @@ public class Order_book {
 
     @ManyToOne(cascade = CascadeType.ALL)
     private Exchange exchange;
+
+    public Order_book(String company_name, Exchange exchange) {
+        this.company_name = company_name;
+        this.exchange = exchange;
+    }
 }

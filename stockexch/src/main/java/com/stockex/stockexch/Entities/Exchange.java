@@ -26,4 +26,9 @@ public class Exchange {
 
     @ManyToOne(cascade = CascadeType.ALL)
     private SORT stock_SORT;
+
+    public Exchange(double fee_Ladder, SORT stock_SORT) {
+        this.fee_Ladder = fee_Ladder;
+        this.stock_SORT = stock_SORT;
+    }
 }
