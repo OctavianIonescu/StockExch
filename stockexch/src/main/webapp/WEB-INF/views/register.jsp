@@ -13,6 +13,7 @@ pageEncoding="UTF-8"%>
             body {
                 background-color: #222;
                 color: #eee;
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             }
             .container {
                 margin-top: 30px;
@@ -108,9 +109,9 @@ pageEncoding="UTF-8"%>
                 "
             >
                 <form method="POST">
-                    <br /><label>Firstname:</label>
+                    <br /><label>First Name:</label>
                     <input type="text" name="firstName" />
-                    <label>Lastname: </label>
+                    <label>Last Name: </label>
                     <input type="text" name="lastName" />
                     <label>Address: </label>
                     <input type="text" name="address" />

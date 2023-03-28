@@ -15,6 +15,7 @@ pageEncoding="UTF-8"%>
             body {
                 background-color: #222;
                 color: #eee;
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             }
             .container {
                 margin-top: 50px;
@@ -32,15 +33,14 @@ pageEncoding="UTF-8"%>
                 width: 100%;
                 max-width: 500px;
             }
-
             h1 {
                 text-align: center;
                 margin-bottom: 30px;
-				font-style: oblique;
-				font-family: verdana;
+                font-style: oblique;
+                font-family: verdana;
                 font-weight: bold;
             }
-			
+
             h2 {
                 margin-top: 0;
                 margin-bottom: 0px;
@@ -48,14 +48,12 @@ pageEncoding="UTF-8"%>
                 font-size: 32px;
                 color: #eee;
             }
-
             form {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 width: 100%;
             }
-
             input[type="text"],
             input[type="password"] {
                 padding: 10px;
@@ -65,7 +63,6 @@ pageEncoding="UTF-8"%>
                 width: 100%;
                 max-width: 400px;
             }
-
             input[type="submit"] {
                 padding: 10px 20px;
                 background-color: #004186;
@@ -78,11 +75,9 @@ pageEncoding="UTF-8"%>
                 width: 100%;
                 max-width: 400px;
             }
-
             input[type="submit"]:hover {
                 background-color: #0069d9;
             }
-
             a {
                 color: #007bff;
                 margin-bottom: 30px;

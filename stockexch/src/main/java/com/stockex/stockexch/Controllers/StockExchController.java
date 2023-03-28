@@ -26,20 +26,20 @@ public class StockExchController {
     private UserService userService;
     User user;
     HttpSession userSession;
-    
+
     @GetMapping("/")
     public String home() {
         return "index"; // Here "index" is the name of jsp file
     }
-    
-    @RequestMapping(value="/login", method={RequestMethod.GET,RequestMethod.POST})
-    public String login(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException  {
+
+    @RequestMapping(value = "/login", method = { RequestMethod.GET, RequestMethod.POST })
+    public String login(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         System.out.println("loggedin" + user);
-        if(request.getParameter("login") != null) {
+        if (request.getParameter("login") != null) {
             String email = (String) request.getParameter("user");
             String pass = (String) request.getParameter("pass");
             User user = userService.userLogin(email, pass);
-            if(user != null) {
+            if (user != null) {
                 HttpSession userSession = request.getSession(true);
                 userSession.setAttribute("user", user);
                 System.out.println("loggedin" + user);
@@ -47,13 +47,15 @@ public class StockExchController {
             } else {
                 return "login";
             }
-        }else return "login";
+        } else
+            return "login";
     }
-    
+
     @GetMapping("/logout")
-    public String logout(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public String logout(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
         userSession = request.getSession(true);
-        if(userSession.getAttribute("user") == null) {
+        if (userSession.getAttribute("user") == null) {
             return "index";
         } else {
             userSession.invalidate();
@@ -61,11 +63,11 @@ public class StockExchController {
             return "logout";
         }
     }
-    
-    @RequestMapping(value="/reg", method={RequestMethod.GET,RequestMethod.POST})
-    public String reg(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {	
+
+    @RequestMapping(value = "/reg", method = { RequestMethod.GET, RequestMethod.POST })
+    public String reg(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         userSession = request.getSession(true);
-        if(request.getParameter("register") != null) {
+        if (request.getParameter("register") != null) {
             String firstName = (String) request.getParameter("firstName");
             String lastName = (String) request.getParameter("lastName");
             String address = (String) request.getParameter("address");
@@ -74,63 +76,65 @@ public class StockExchController {
             // register user
             User user1;
             User userRegistered;
-            try{
+            try {
                 user1 = new User(firstName, lastName, address, email, pass);
                 userRegistered = userService.addUser(user1);
-            }catch(Exception e){
+            } catch (Exception e) {
                 return "register";
             }
-            
-            
+
             System.out.println(userRegistered);
-            if(userRegistered != null) {
+            if (userRegistered != null) {
                 return "redirect:/login";
             } else {
                 return "register";
             }
-        } else return "register";
+        } else
+            return "register";
     }
-    
+
     @GetMapping("/pd")
-    public String details(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException  {
+    public String details(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
         userSession = request.getSession(true);
         User user = (User) userSession.getAttribute("user");
         System.out.println(user.getU_ID());
         return "personal_details";
     }
-    
-    @RequestMapping(value="/ch", method={RequestMethod.GET,RequestMethod.POST})
-    public String ch(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {	
+
+    @RequestMapping(value = "/ch", method = { RequestMethod.GET, RequestMethod.POST })
+    public String ch(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         userSession = request.getSession(true);
         User user = (User) userSession.getAttribute("user");
-        if(request.getParameter("saveChanges") != null) {
+        if (request.getParameter("saveChanges") != null) {
             String firstName = (String) request.getParameter("firstName");
             System.out.println(firstName);
-            if(firstName != ""){
+            if (firstName != "") {
                 userService.updateUserFirstNameByUser(user, firstName);
             }
             String lastName = (String) request.getParameter("lastName");
             System.out.println(lastName);
-            if(lastName != ""){
+            if (lastName != "") {
                 userService.updateUserLastNameByUser(user, lastName);
             }
             String address = (String) request.getParameter("address");
             System.out.println(address);
-            if(address != ""){
+            if (address != "") {
                 userService.updateUserAddressByUser(user, address);
             }
             String pass = (String) request.getParameter("pass");
             System.out.println(pass);
-            if(pass != ""){
+            if (pass != "") {
                 userService.updateUserPasswordByUser(user, pass);
             }
             String email = (String) request.getParameter("email");
             System.out.println(email);
-            if(email != ""){
+            if (email != "") {
                 userService.updateUserEmailByUser(user, email);
             }
             return "personal_details";
-        } else return "change_details";
+        } else
+            return "change_details";
     }
-    
+
 }

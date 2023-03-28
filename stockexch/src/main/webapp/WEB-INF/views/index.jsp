@@ -29,8 +29,8 @@ pageEncoding="UTF-8"%>
 
             h1 {
                 margin: 0;
-				font-style: oblique;
-				font-family: verdana;
+                font-style: oblique;
+                font-family: verdana;
                 font-weight: bold;
             }
 
@@ -122,8 +122,8 @@ pageEncoding="UTF-8"%>
                 <h1>ON TRADING</h1>
                 <nav>
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Accounts</a></li>
+                        <li><a href="index.jsp">Home</a></li>
+                        <li><a href="dashboard.jsp">Accounts</a></li>
                         <li><a href="#">Transactions</a></li>
                         <li><a href="#">Contact</a></li>
                     </ul>
@@ -161,7 +161,7 @@ pageEncoding="UTF-8"%>
                         support and guidance every step of the way.<br />
                     </p>
                     <a href="#" class="btn-secondary">Learn More</a>
-				<!-- </p>Thank you for choosing ON TRADING, the ultimate electronic trading platform for online stock traders.</p> -->
+                    <!-- </p>Thank you for choosing ON TRADING, the ultimate electronic trading platform for online stock traders.</p> -->
                 </section>
             </main>
             <footer>
