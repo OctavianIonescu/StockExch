@@ -12,6 +12,12 @@ pageEncoding="UTF-8"%>
             crossorigin="anonymous"
             alt="Bootstrap CDN"
         />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300&display=swap"
+            rel="stylesheet"
+        />
         <title>Trading Application Landing Page</title>
         <style>
             body {
@@ -29,8 +35,8 @@ pageEncoding="UTF-8"%>
 
             h1 {
                 margin: 0;
-                font-style: oblique;
-                font-family: verdana;
+                font-style: normal;
+                font-family: "Zen Maru Gothic", sans-serif;
                 font-weight: bold;
             }
 

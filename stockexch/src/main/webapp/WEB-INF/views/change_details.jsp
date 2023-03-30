@@ -10,6 +10,12 @@ import="com.stockex.stockexch.Entities.User" %>
             integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
             crossorigin="anonymous"
         />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300&display=swap"
+            rel="stylesheet"
+        />
         <meta charset="UTF-8" />
         <title>Edit Profile</title>
         <style>
@@ -18,7 +24,7 @@ import="com.stockex.stockexch.Entities.User" %>
                 padding: 0;
                 background-color: #222;
                 color: #eee;
-				font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
             }
             .container {
                 margin-top: 50px;
@@ -37,28 +43,28 @@ import="com.stockex.stockexch.Entities.User" %>
                 max-width: 500px;
             }
             h1 {
-                text-align: center;
-                margin-bottom: 30px;
-                font-style: oblique;
-                font-family: verdana;
+                margin: 0;
+                font-style: normal;
+                font-family: "Zen Maru Gothic", sans-serif;
                 font-weight: bold;
             }
-			h2 {
+
+            h2 {
                 margin-top: 0;
                 margin-bottom: 0px;
                 font-weight: bold;
                 font-size: 32px;
                 color: #eee;
-				text-align: center;
+                text-align: center;
             }
 
             /* form {
-			background-color: #fff;
-			border-radius: 5px;
-			box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-			padding: 30px;
-			margin-top: 30px;
-		} */
+            	background-color: #fff;
+            	border-radius: 5px;
+            	box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            	padding: 30px;
+            	margin-top: 30px;
+            } */
             form {
                 display: flex;
                 flex-direction: column;

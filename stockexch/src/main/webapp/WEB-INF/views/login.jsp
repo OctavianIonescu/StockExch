@@ -9,13 +9,19 @@ pageEncoding="UTF-8"%>
             integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
             crossorigin="anonymous"
         />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300&display=swap"
+            rel="stylesheet"
+        />
         <meta charset="UTF-8" />
         <title>Login</title>
         <style>
             body {
                 background-color: #222;
                 color: #eee;
-                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
             }
             .container {
                 margin-top: 50px;
@@ -34,10 +40,9 @@ pageEncoding="UTF-8"%>
                 max-width: 500px;
             }
             h1 {
-                text-align: center;
-                margin-bottom: 30px;
-                font-style: oblique;
-                font-family: verdana;
+                margin: 0;
+                font-style: normal;
+                font-family: "Zen Maru Gothic", sans-serif;
                 font-weight: bold;
             }
 
