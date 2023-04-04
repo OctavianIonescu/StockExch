@@ -469,9 +469,9 @@ pageEncoding="UTF-8"%>
                 </form>
                 <p1>Not registered? <a href="/reg">Click here.</a></p1>
             </div>
-            <div class="footer__container">
+            <!-- <div class="footer__container">
                 <a href="/" id="footer__logo">&copy; 2023 ON TRADING. All Rights Reserved.</a>
-            </div>
+            </div> -->
         </div>
         
     </body>
