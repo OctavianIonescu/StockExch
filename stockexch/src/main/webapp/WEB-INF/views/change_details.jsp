@@ -25,6 +25,7 @@ import="com.stockex.stockexch.Entities.User" %>
                 padding: 0;
                 font-family: "Kumbh Sans", sans-serif;
                 scroll-behavior: smooth;
+                color: #ced4da;
             }
 
             .navbar {
@@ -456,25 +457,9 @@ import="com.stockex.stockexch.Entities.User" %>
                 </ul>
             </div>
         </nav>
-        <div class="container">
-            <h1>ON TRADING</h1>
-            <nav
-                style="
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: space-between;
-                "
-            >
-                <a href="/">Back to home</a>
-            </nav>
-            <div
-                style="
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                "
-            >
-                <h2><br />Update Profile</h2>
+        <div class="hero" id="home">
+            <div class="hero__container">
+                <p class="hero__description">Update Profile</p>
                 <form method="POST">
                     <div>
                         <% User user = (User)

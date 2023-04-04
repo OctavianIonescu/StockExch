@@ -25,6 +25,7 @@ pageEncoding="UTF-8"%>
                 padding: 0;
                 font-family: "Kumbh Sans", sans-serif;
                 scroll-behavior: smooth;
+                color: #ced4da;
             }
             
             .navbar {
