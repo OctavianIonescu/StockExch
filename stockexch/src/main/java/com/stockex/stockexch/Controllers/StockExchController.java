@@ -43,7 +43,7 @@ public class StockExchController {
                 HttpSession userSession = request.getSession(true);
                 userSession.setAttribute("user", user);
                 System.out.println("loggedin" + user);
-                return "redirect:/";
+                return "dashboard";
             } else {
                 return "login";
             }

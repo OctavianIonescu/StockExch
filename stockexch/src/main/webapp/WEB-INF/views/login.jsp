@@ -231,7 +231,7 @@ pageEncoding="UTF-8"%>
             .hero {
                 background: #000000;
                 background: linear-gradient(to right, #161616, #000000);
-                padding: 200px 0;
+                padding: 150px;
             }
 
             .hero__container {
@@ -239,11 +239,14 @@ pageEncoding="UTF-8"%>
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                max-width: 1200px;
+                max-width: 500px;
                 margin: 0 auto;
                 height: 90%;
                 text-align: center;
                 padding: 30px;
+                border-radius: 20px;
+                background-color: #171717;
+                box-shadow: 0px 0px 10px rgb(44, 42, 42);
             }
 
             .hero__heading {
