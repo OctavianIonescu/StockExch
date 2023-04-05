@@ -13,10 +13,14 @@ import lombok.Setter;
 @Table(name = "sell_order")
 @DiscriminatorValue("SELL")
 @Getter
-@Setter 
+@Setter
 @NoArgsConstructor
 public class SellOrder extends Orders {
     @OneToOne
     @JoinColumn(name = "order_ID")
     private Orders order;
+
+    public SellOrder(User user, Order_book order_book, int amount, double price) {
+        super(user, order_book, amount, price);
+    }
 }

@@ -11,14 +11,19 @@ import com.stockex.stockexch.Entities.*;
 import jakarta.transaction.Transactional;
 
 @Repository
-public interface OrdersRepo extends JpaRepository<Orders,Integer>{
-    
+public interface OrdersRepo extends JpaRepository<Orders, Integer> {
+
     @Query("DELETE from Orders WHERE order_ID = :order_ID")
-    int deleteOrderByID(@Param("order_ID")int iD);
+    int deleteOrderByID(@Param("order_ID") int iD);
 
     @Query("UPDATE Orders SET status = 'FULFILLED' WHERE order_ID = :order_ID")
-	@Transactional
-	@Modifying
-    int setFulfilledByID(@Param("order_ID")int iD);
-    
+    @Transactional
+    @Modifying
+    int setFulfilledByID(@Param("order_ID") int iD);
+
+    @Query("UPDATE Orders SET amount = :amount WHERE order_ID = :order_ID")
+    @Transactional
+    @Modifying
+    void setAmountByID(@Param("order_ID") int order_ID, @Param("amount") int amount);
+
 }

@@ -3,14 +3,9 @@
     <html>
 
     <head>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-            crossorigin="anonymous" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300&display=swap" rel="stylesheet" />
+        <title>Dashboard</title>
         <meta charset="UTF-8" />
-        <title>Login</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <style>
             body {
                 box-sizing: border-box;
@@ -86,39 +81,6 @@
                 text-decoration: none;
                 height: 100%;
                 transition: all 0.3s ease;
-            }
-
-            .navbar__btn {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                padding: 0 1rem;
-                width: 100%;
-            }
-
-            .button {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                text-decoration: none;
-                padding: 10px 20px;
-                height: 100%;
-                width: 100%;
-                border: none;
-                outline: none;
-                border-radius: 4px;
-                background: #ee0979;
-                /* fallback for old browsers */
-                background: -webkit-linear-gradient(to right,
-                        #009dff,
-                        #1109ee);
-                /* Chrome 10-25, Safari 5.1-6 */
-                background: linear-gradient(to right,
-                        #009dff,
-                        #1109ee);
-                /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-                color: #fff;
-                transition: all 0.3 ease;
             }
 
             .navbar__links:hover {
@@ -220,11 +182,22 @@
                 }
             }
 
+            .container {
+                background: #000000;
+                background: linear-gradient(to right, #1d1c1c, #000000);
+                margin: auto;
+                padding: 100px;
+                max-width: 900px;
+                background-color: #fff;
+                border-radius: 5px;
+                box-shadow: 0px 0px 10px rgba(28, 28, 28, 0.1);
+            }
+
             /* Hero Section */
             .hero {
                 background: #000000;
                 background: linear-gradient(to right, #161616, #000000);
-                padding: 200px 0;
+                padding: 0;
             }
 
             .hero__container {
@@ -239,29 +212,6 @@
                 padding: 30px;
             }
 
-            .hero__heading {
-                font-size: 100px;
-                /* margin-bottom: 15px; */
-                color: #fff;
-            }
-
-            .hero__heading span {
-                background: #3500f4;
-                /* fallback for old browsers */
-                background: -webkit-linear-gradient(to right,
-                        #009dff,
-                        #1109ee);
-                /* Chrome 10-25, Safari 5.1-6 */
-                background: linear-gradient(to right,
-                        #009dff,
-                        #1109ee);
-                /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-                background-size: 100%;
-                -webkit-background-clip: text;
-                -moz-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                -mo-text-fill-color: transparent;
-            }
 
             .hero__description {
                 margin-bottom: 20px;
@@ -283,17 +233,7 @@
                 -moz-text-fill-color: transparent;
             }
 
-            .hero__description1 {
-                font-size: 25px;
-                padding: 0px;
-                margin-bottom: 0px;
-                background: #ffffff;
-                background-size: 100%;
-                -webkit-background-clip: text;
-                -moz-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                -moz-text-fill-color: transparent;
-            }
+
 
             .highlight {
                 border-bottom: 4px solid rgb(#046174);
@@ -309,52 +249,6 @@
                 }
             }
 
-            /* Mobile Responsive */
-            @media screen and (max-width: 1100px) {
-                .main__container {
-                    display: grid;
-                    grid-template-columns: 1fr;
-                    align-items: center;
-                    justify-content: center;
-                    width: 100%;
-                    margin: 0 auto;
-                    height: 90%;
-                }
-
-                .main__img--container {
-                    display: flex;
-                    justify-content: center;
-                }
-
-                .main__img--card {
-                    height: 425px;
-                    width: 425px;
-                }
-
-                .main__content {
-                    text-align: center;
-                    margin-bottom: 4rem;
-                }
-
-                .main__content h1 {
-                    font-size: 2.5rem;
-                    margin-top: 2rem;
-                }
-
-                .main__content h2 {
-                    font-size: 3rem;
-                }
-
-                .main__content p {
-                    margin-top: 1rem;
-                    font-size: 1.5rem;
-                }
-
-                .main__btn {
-                    padding: 12px 36px;
-                    margin: 2.5rem 0;
-                }
-            }
 
             form {
                 display: flex;
@@ -363,18 +257,44 @@
                 width: 100%;
             }
 
-            input[type="text"],
-            input[type="password"] {
-                padding: 8px;
-                margin: 10px;
-                border-radius: 5px;
-                border: 1px solid #ccc;
-                width: 100%;
-                max-width: 400px;
+
+
+            table {
+                border-collapse: collapse;
+                margin: 20px 0;
+                width: 120%;
             }
 
-            input[type="submit"] {
-                padding: 10px 20px;
+            th,
+            td {
+                padding: 10px;
+                text-align: left;
+                border-bottom: 1px solid #ccc;
+                color: #555;
+            }
+
+            th {
+                background-color: #f2f2f2;
+                font-weight: normal;
+            }
+
+            .buy {
+                background-color: #e6ffee;
+            }
+
+            .sell {
+                background-color: #ffe6e6;
+            }
+
+            .action {
+                text-align: center;
+            }
+
+            .action a {
+                padding: 5px 10px;
+
+                text-decoration: none;
+
                 background-color: #004186;
                 color: #fff;
                 border: none;
@@ -386,37 +306,66 @@
                 max-width: 400px;
             }
 
-            input[type="submit"]:hover {
-                background-color: #0069d9;
+            .action a:hover {
+                background-color: #0056b3;
+                transition: all 0.3s ease-in-out;
             }
 
-            p1 {
+            .add-order {
+                margin-top: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                border: 1.5px solid #1128f3;
+                padding: 10px;
+                border-radius: 5px;
+            }
+
+            .add-order label {
+                display: block;
+                margin-bottom: 10px;
                 color: #ffffff;
-                margin-bottom: 30px;
             }
 
-            a {
-                color: #007bff;
-                margin-bottom: 30px;
+            .add-order input[type="text"],
+            .add-order input[type="number"] {
+                display: block;
+                margin-bottom: 10px;
+                padding: 5px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                width: 200px;
+                font-size: 16px;
+                color: #555;
             }
 
-            /* Footer CSS */
-            .footer__container {
-                background-color: #131313;
-                padding: 1rem 0;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
+            .add-order select {
+                display: block;
+                margin-bottom: 10px;
+                padding: 5px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                width: 200px;
+                font-size: 16px;
+                color: #555;
             }
 
-            #footer__logo {
+            .add-order input[type="submit"] {
+                padding: 10px 20px;
+                background-color: #004186;
                 color: #fff;
-                display: flex;
-                align-items: center;
+                border: none;
+                border-radius: 5px;
                 cursor: pointer;
-                text-decoration: none;
-                font-size: 18px;
+                margin-top: 20px;
+                transition: background-color 0.3s ease;
+                width: 100%;
+                max-width: 400px;
+
+            }
+
+            .add-order input[type="submit"]:hover {
+                background-color: #0069d9;
             }
         </style>
     </head>
@@ -449,26 +398,64 @@
         </nav>
         <div class="hero" id="home">
             <div class="hero__container">
-                <p class="hero__description">New User</p>
-                <form method="POST">
-                    <p1 class="hero__description1" </p1></p1><br /><label>First Name:</label></p1>
-                    <input type="text" name="firstName" />
-                    <p1 class="hero__description1" </p1></p1><label>Last Name: </label></p1>
-                    <input type="text" name="lastName" />
-                    <p1 class="hero__description1" </p1></p1><label>Address: </label></p1>
-                    <input type="text" name="address" />
-                    <p1 class="hero__description1" </p1></p1><label>Email: </label></p1>
-                    <input type="text" name="email" />
-                    <p1 class="hero__description1" </p1></p1><label>Password:</label></p1>
-                    <input type="password" name="pass" />
-                    <input type="submit" name="register" value="Register" />
-                </form>
-                <p1>Have an account? <a href="/login">Click here.</a></p1>
+                <p class="hero__description">Dashboard</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Stock</th>
+                            <th>Type</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                            <th>Time</th>
+                            <th>Status</th>
+                            <th class="action">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Display BUY and SELL orders here -->
+                        <tr class="buy">
+                            <td>1</td>
+                            <td>BT</td>
+                            <td>BUY</td>
+                            <td>1</td>
+                            <td>£170.50</td>
+                            <td>2022-03-24 10:30:00</td>
+                            <td>PENDING</td>
+                            <td class="action"><a href="#">Cancel</a></td>
+                        </tr>
+                        <tr class="sell">
+                            <td>2</td>
+                            <td>VOD</td>
+                            <td>SELL</td>
+                            <td>2</td>
+                            <td>£2150.25</td>
+                            <td>2022-03-24 11:15:00</td>
+                            <td>FILLED</td>
+                            <td class="action"><a href="#">View</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="add-order">
+                    <h2>Add Order</h2>
+                    <form action="" method="post">
+                        <label for="stock">Stock:</label>
+                        <input type="text" id="stock" name="stock" required />
+                        <label for="type">Type:</label>
+                        <select id="type" name="type" required>
+                            <option value="">Select Type</option>
+                            <option value="BUY">BUY</option>
+                            <option value="SELL">SELL</option>
+                        </select>
+                        <label for="quantity">Quantity:</label>
+                        <input type="number" id="quantity" name="quantity" required />
+                        <label for="price">Price:</label>
+                        <input type="number" id="price" name="price" step="0.01" required />
+                        <input type="submit" value="Add Order" />
+                    </form>
+                </div>
             </div>
-            <!-- <div class="footer__container">
-                    <a href="/" id="footer__logo">&copy; 2023 ON TRADING. All Rights Reserved.</a>
-                </div> -->
-        </div>
         </div>
     </body>
 

@@ -1,7 +1,6 @@
 package com.stockex.stockexch.Entities;
-import java.util.List;
 
-import org.hibernate.validator.constraints.UniqueElements;
+import java.util.List;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
@@ -43,7 +42,12 @@ public class User {
 
     @OneToMany(mappedBy = "user")
     private List<Orders> orders;
-    
+
+    @Column(name = "roles")
+    private String roles;
+
+    @Column(name = "active")
+    private boolean active;
 
     public User(String first_name, String last_name, String user_address, String email, String user_password) {
         this.first_name = first_name;
@@ -51,11 +55,13 @@ public class User {
         this.user_address = user_address;
         this.email = email;
         this.user_password = user_password;
+        this.active = true;
+        this.roles = "ROLE_USER";
     }
 
-   
-    /*public List<Account> getAccounts(){
-        return this.accounts;
-    }*/
+    /*
+     * public List<Account> getAccounts(){
+     * return this.accounts;
+     * }
+     */
 }
-
