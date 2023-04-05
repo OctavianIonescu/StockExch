@@ -28,10 +28,11 @@ public class StockExchController {
 
     @RequestMapping(value = "/login", method = { RequestMethod.GET, RequestMethod.POST })
     public String login(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println("loggedin" + user);
+        System.out.println("loggedin " + user);
         if (request.getParameter("login") != null) {
-            String email = (String) request.getParameter("user");
-            String pass = (String) request.getParameter("pass");
+            String email = (String) request.getParameter("username");
+            String pass = (String) request.getParameter("password");
+            System.out.println(email + " " + pass);
             User user = userService.userLogin(email, pass);
             if (user != null) {
                 HttpSession userSession = request.getSession(true);
