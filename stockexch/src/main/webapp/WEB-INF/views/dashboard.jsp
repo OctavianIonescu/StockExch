@@ -1,7 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+    <!DOCTYPE html>
+    <html>
+
     <head>
         <title>Dashboard</title>
         <meta charset="UTF-8" />
@@ -40,17 +40,16 @@ pageEncoding="UTF-8"%>
             }
 
             #navbar__logo {
-                background: #4209ee; /* fallback for old browsers */
-                background: -webkit-linear-gradient(
-                    to right,
-                    #009dff,
-                    #1109ee
-                ); /* Chrome 10-25, Safari 5.1-6 */
-                background: linear-gradient(
-                    to right,
-                    #009dff,
-                    #1109ee
-                ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+                background: #4209ee;
+                /* fallback for old browsers */
+                background: -webkit-linear-gradient(to right,
+                        #009dff,
+                        #1109ee);
+                /* Chrome 10-25, Safari 5.1-6 */
+                background: linear-gradient(to right,
+                        #009dff,
+                        #1109ee);
+                /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
                 background-size: 100%;
                 -webkit-background-clip: text;
                 -moz-background-clip: text;
@@ -88,6 +87,7 @@ pageEncoding="UTF-8"%>
                 color: #189dfc;
                 transition: all 0.3s ease;
             }
+
             @media screen and (max-width: 960px) {
                 .navbar__container {
                     display: flex;
@@ -181,6 +181,7 @@ pageEncoding="UTF-8"%>
                     transform: translateY(-8px) rotate(-45deg);
                 }
             }
+
             .container {
                 background: #000000;
                 background: linear-gradient(to right, #1d1c1c, #000000);
@@ -191,6 +192,7 @@ pageEncoding="UTF-8"%>
                 border-radius: 5px;
                 box-shadow: 0px 0px 10px rgba(28, 28, 28, 0.1);
             }
+
             /* Hero Section */
             .hero {
                 background: #000000;
@@ -214,17 +216,16 @@ pageEncoding="UTF-8"%>
             .hero__description {
                 margin-bottom: 20px;
                 font-size: 50px;
-                background: #3422ff; /* fallback for old browsers */
-                background: -webkit-linear-gradient(
-                    to right,
-                    #14fff7,
-                    #046174
-                ); /* Chrome 10-25, Safari 5.1-6 */
-                background: linear-gradient(
-                    to right,
-                    #14fff7,
-                    #046174
-                ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+                background: #3422ff;
+                /* fallback for old browsers */
+                background: -webkit-linear-gradient(to right,
+                        #14fff7,
+                        #046174);
+                /* Chrome 10-25, Safari 5.1-6 */
+                background: linear-gradient(to right,
+                        #14fff7,
+                        #046174);
+                /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
                 background-size: 100%;
                 -webkit-background-clip: text;
                 -moz-background-clip: text;
@@ -256,7 +257,7 @@ pageEncoding="UTF-8"%>
                 width: 100%;
             }
 
-    
+
 
             table {
                 border-collapse: collapse;
@@ -360,7 +361,7 @@ pageEncoding="UTF-8"%>
                 transition: background-color 0.3s ease;
                 width: 100%;
                 max-width: 400px;
-                
+
             }
 
             .add-order input[type="submit"]:hover {
@@ -368,6 +369,7 @@ pageEncoding="UTF-8"%>
             }
         </style>
     </head>
+
     <body>
         <!-- Navbar Section -->
         <nav class="navbar">
@@ -383,22 +385,13 @@ pageEncoding="UTF-8"%>
                     </li>
 
                     <li class="navbar__item">
-                        <a href="#edu" class="navbar__links" id="edu-page"
-                            >About</a
-                        >
+                        <a href="#edu" class="navbar__links" id="edu-page">About</a>
                     </li>
                     <li class="navbar__item">
-                        <a
-                            href="#projects"
-                            class="navbar__links"
-                            id="projects-page"
-                            >Services</a
-                        >
+                        <a href="#projects" class="navbar__links" id="projects-page">Services</a>
                     </li>
                     <li class="navbar__item">
-                        <a href="/login" class="navbar__links" id="exp-page"
-                            >Log In</a
-                        >
+                        <a href="/login" class="navbar__links" id="exp-page">Log In</a>
                     </li>
                 </ul>
             </div>
@@ -456,24 +449,14 @@ pageEncoding="UTF-8"%>
                             <option value="SELL">SELL</option>
                         </select>
                         <label for="quantity">Quantity:</label>
-                        <input
-                            type="number"
-                            id="quantity"
-                            name="quantity"
-                            required
-                        />
+                        <input type="number" id="quantity" name="quantity" required />
                         <label for="price">Price:</label>
-                        <input
-                            type="number"
-                            id="price"
-                            name="price"
-                            step="0.01"
-                            required
-                        />
+                        <input type="number" id="price" name="price" step="0.01" required />
                         <input type="submit" value="Add Order" />
                     </form>
                 </div>
             </div>
         </div>
     </body>
-</html>
+
+    </html>

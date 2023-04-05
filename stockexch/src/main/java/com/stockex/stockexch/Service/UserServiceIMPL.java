@@ -1,5 +1,6 @@
 package com.stockex.stockexch.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +12,7 @@ import com.stockex.stockexch.Entities.*;
 
 @Service
 @Primary
-public class UserServiceIMPL implements UserService{
+public class UserServiceIMPL implements UserService {
 
     @Autowired
     private UserRepository userRepository;
@@ -51,6 +52,7 @@ public class UserServiceIMPL implements UserService{
         user.setFirst_name(newFirstName);
         return userRepository.updateUserFirstNameByUser(ID, newFirstName);
     }
+
     @Override
     public int updateUserLastNameByUser(User user, String newLastName) {
         int ID = user.getU_ID();
@@ -65,17 +67,9 @@ public class UserServiceIMPL implements UserService{
         return userRepository.updateUserPasswordByUser(ID, newPassword);
     }
 
-    /* 
     @Override
-    public List<Transaction> listTransactionsByUser(User user) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'listTransactionsByUser'");
+    public List<Orders> listOrdersByUser(User user) {
+        return userRepository.listOrdersByUser(user);
     }
 
-    @Override
-    public List<Accounts> listAccountsByUser(User user) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'listAccountsByUser'");
-    }
-    */
 }

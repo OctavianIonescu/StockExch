@@ -1,17 +1,11 @@
 package com.stockex.stockexch.Controllers;
 
 import java.io.IOException;
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
-
 import com.stockex.stockexch.Entities.User;
 import com.stockex.stockexch.Service.UserService;
 
@@ -42,8 +36,8 @@ public class StockExchController {
             if (user != null) {
                 HttpSession userSession = request.getSession(true);
                 userSession.setAttribute("user", user);
-                System.out.println("loggedin" + user);
-                return "dashboard";
+                System.out.println("loggedon" + user);
+                return "redirect:/dashboard";
             } else {
                 return "login";
             }

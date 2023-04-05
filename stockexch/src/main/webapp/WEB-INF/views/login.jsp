@@ -1,24 +1,17 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+    <!DOCTYPE html>
+    <html>
+
     <head>
-        <link
-            rel="stylesheet"
-            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
             integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-            crossorigin="anonymous"
-        />
+            crossorigin="anonymous" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300&display=swap"
-            rel="stylesheet"
-        />
+        <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300&display=swap" rel="stylesheet" />
         <meta charset="UTF-8" />
         <title>Login</title>
         <style>
-            
             body {
                 box-sizing: border-box;
                 margin: 0;
@@ -27,7 +20,7 @@ pageEncoding="UTF-8"%>
                 scroll-behavior: smooth;
                 color: #ced4da;
             }
-            
+
             .navbar {
                 background: #131313;
                 height: 80px;
@@ -52,17 +45,16 @@ pageEncoding="UTF-8"%>
             }
 
             #navbar__logo {
-                background: #4209ee; /* fallback for old browsers */
-                background: -webkit-linear-gradient(
-                    to right,
-                    #009dff,
-                    #1109ee
-                ); /* Chrome 10-25, Safari 5.1-6 */
-                background: linear-gradient(
-                    to right,
-                    #009dff,
-                    #1109ee
-                ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+                background: #4209ee;
+                /* fallback for old browsers */
+                background: -webkit-linear-gradient(to right,
+                        #009dff,
+                        #1109ee);
+                /* Chrome 10-25, Safari 5.1-6 */
+                background: linear-gradient(to right,
+                        #009dff,
+                        #1109ee);
+                /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
                 background-size: 100%;
                 -webkit-background-clip: text;
                 -moz-background-clip: text;
@@ -115,17 +107,16 @@ pageEncoding="UTF-8"%>
                 border: none;
                 outline: none;
                 border-radius: 4px;
-                background: #ee0979; /* fallback for old browsers */
-                background: -webkit-linear-gradient(
-                    to right,
-                    #009dff,
-                    #1109ee
-                ); /* Chrome 10-25, Safari 5.1-6 */
-                background: linear-gradient(
-                    to right,
-                    #009dff,
-                    #1109ee
-                ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+                background: #ee0979;
+                /* fallback for old browsers */
+                background: -webkit-linear-gradient(to right,
+                        #009dff,
+                        #1109ee);
+                /* Chrome 10-25, Safari 5.1-6 */
+                background: linear-gradient(to right,
+                        #009dff,
+                        #1109ee);
+                /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
                 color: #fff;
                 transition: all 0.3 ease;
             }
@@ -134,6 +125,7 @@ pageEncoding="UTF-8"%>
                 color: #189dfc;
                 transition: all 0.3s ease;
             }
+
             @media screen and (max-width: 960px) {
                 .navbar__container {
                     display: flex;
@@ -227,6 +219,7 @@ pageEncoding="UTF-8"%>
                     transform: translateY(-8px) rotate(-45deg);
                 }
             }
+
             /* Hero Section */
             .hero {
                 background: #000000;
@@ -256,17 +249,16 @@ pageEncoding="UTF-8"%>
             }
 
             .hero__heading span {
-                background: #3500f4; /* fallback for old browsers */
-                background: -webkit-linear-gradient(
-                    to right,
-                    #009dff,
-                    #1109ee
-                ); /* Chrome 10-25, Safari 5.1-6 */
-                background: linear-gradient(
-                    to right,
-                    #009dff,
-                    #1109ee
-                ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+                background: #3500f4;
+                /* fallback for old browsers */
+                background: -webkit-linear-gradient(to right,
+                        #009dff,
+                        #1109ee);
+                /* Chrome 10-25, Safari 5.1-6 */
+                background: linear-gradient(to right,
+                        #009dff,
+                        #1109ee);
+                /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
                 background-size: 100%;
                 -webkit-background-clip: text;
                 -moz-background-clip: text;
@@ -277,17 +269,16 @@ pageEncoding="UTF-8"%>
             .hero__description {
                 margin-bottom: 20px;
                 font-size: 50px;
-                background: #3422ff; /* fallback for old browsers */
-                background: -webkit-linear-gradient(
-                    to right,
-                    #14fff7,
-                    #046174
-                ); /* Chrome 10-25, Safari 5.1-6 */
-                background: linear-gradient(
-                    to right,
-                    #14fff7,
-                    #046174
-                ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+                background: #3422ff;
+                /* fallback for old browsers */
+                background: -webkit-linear-gradient(to right,
+                        #14fff7,
+                        #046174);
+                /* Chrome 10-25, Safari 5.1-6 */
+                background: linear-gradient(to right,
+                        #14fff7,
+                        #046174);
+                /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
                 background-size: 100%;
                 -webkit-background-clip: text;
                 -moz-background-clip: text;
@@ -361,6 +352,7 @@ pageEncoding="UTF-8"%>
                     margin-top: 1rem;
                     font-size: 1.5rem;
                 }
+
                 .main__btn {
                     padding: 12px 36px;
                     margin: 2.5rem 0;
@@ -373,6 +365,7 @@ pageEncoding="UTF-8"%>
                 align-items: center;
                 width: 100%;
             }
+
             input[type="text"],
             input[type="password"] {
                 padding: 8px;
@@ -382,6 +375,7 @@ pageEncoding="UTF-8"%>
                 width: 100%;
                 max-width: 400px;
             }
+
             input[type="submit"] {
                 padding: 10px 20px;
                 background-color: #004186;
@@ -394,37 +388,42 @@ pageEncoding="UTF-8"%>
                 width: 100%;
                 max-width: 400px;
             }
+
             input[type="submit"]:hover {
                 background-color: #0069d9;
             }
+
             p1 {
                 color: #ffffff;
-                margin-bottom: 30px; 
+                margin-bottom: 30px;
             }
+
             a {
                 color: #007bff;
                 margin-bottom: 30px;
             }
+
             /* Footer CSS */
-        .footer__container {
-            background-color: #131313;
-            padding: 1rem 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        #footer__logo {
-            color: #fff;
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-            text-decoration: none;
-            font-size: 18px;
-        }
+            .footer__container {
+                background-color: #131313;
+                padding: 1rem 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            #footer__logo {
+                color: #fff;
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                text-decoration: none;
+                font-size: 18px;
+            }
         </style>
     </head>
+
     <body>
         <!-- Navbar Section -->
         <nav class="navbar">
@@ -440,22 +439,13 @@ pageEncoding="UTF-8"%>
                     </li>
 
                     <li class="navbar__item">
-                        <a href="#edu" class="navbar__links" id="edu-page"
-                            >About</a
-                        >
+                        <a href="#edu" class="navbar__links" id="edu-page">About</a>
                     </li>
                     <li class="navbar__item">
-                        <a
-                            href="#projects"
-                            class="navbar__links"
-                            id="projects-page"
-                            >Services</a
-                        >
+                        <a href="#projects" class="navbar__links" id="projects-page">Services</a>
                     </li>
                     <li class="navbar__item">
-                        <a href="/login" class="navbar__links" id="exp-page"
-                            >Log In</a
-                        >
+                        <a href="/login" class="navbar__links" id="exp-page">Log In</a>
                     </li>
                 </ul>
             </div>
@@ -465,10 +455,10 @@ pageEncoding="UTF-8"%>
             <div class="hero__container">
                 <p class="hero__description">User Login</p>
                 <form method="POST">
-                    <p1 class="hero__description1"</p1><label for="user"><br />Username</label></p1>
-                    <input type="text" name="user" id="user" required />
-                    <p1 class="hero__description1"</p1><label for="pass">Password</label></p1>
-                    <input type="password" name="pass" id="pass" required />
+                    <p1 class="hero__description1" </p1><label for="username"><br />Username</label></p1>
+                    <input type="text" name="username" id="username" required />
+                    <p1 class="hero__description1" </p1><label for="password">Password</label></p1>
+                    <input type="password" name="password" id="password" required />
                     <input type="submit" name="login" value="Login" />
                 </form>
                 <p1>Not registered? <a href="/reg">Click here.</a></p1>
@@ -477,6 +467,7 @@ pageEncoding="UTF-8"%>
                 <a href="/" id="footer__logo">&copy; 2023 ON TRADING. All Rights Reserved.</a>
             </div> -->
         </div>
-        
+
     </body>
-</html>
+
+    </html>
