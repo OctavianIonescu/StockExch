@@ -6,6 +6,8 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import com.stockex.stockexch.Entities.BuyOrder;
+import com.stockex.stockexch.Entities.Order_book;
+import com.stockex.stockexch.Entities.SellOrder;
 
 import jakarta.transaction.Transactional;
 
@@ -18,5 +20,8 @@ public interface BuyOrderRepo extends JpaRepository<BuyOrder, Integer> {
     @Transactional
     @Modifying
     public int setFulfilledByID(@Param("order_ID") int iD);
+
+    @Query("SELECT u FROM BuyOrder u where u.order_book = :order_book")
+    public BuyOrder findByOrderBook(Order_book order_book);
 
 }
