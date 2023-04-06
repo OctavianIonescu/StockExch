@@ -14,6 +14,8 @@ import jakarta.transaction.Transactional;
 public interface OrdersRepo extends JpaRepository<Orders, Integer> {
 
     @Query("DELETE from Orders WHERE order_ID = :order_ID")
+    @Transactional
+    @Modifying
     int deleteOrderByID(@Param("order_ID") int iD);
 
     @Query("UPDATE Orders SET status = 'FULFILLED' WHERE order_ID = :order_ID")

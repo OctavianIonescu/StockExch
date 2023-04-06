@@ -1,9 +1,11 @@
 package com.stockex.stockexch.Controllers;
 
 import java.io.IOException;
+import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,6 +16,7 @@ import com.stockex.stockexch.Entities.Order_book;
 import com.stockex.stockexch.Entities.Orders;
 import com.stockex.stockexch.Entities.SellOrder;
 import com.stockex.stockexch.Entities.User;
+import com.stockex.stockexch.Repos.OrdersRepo;
 import com.stockex.stockexch.Service.BuyOrderService;
 import com.stockex.stockexch.Service.OrderService;
 import com.stockex.stockexch.Service.Order_bookService;
@@ -28,9 +31,19 @@ import jakarta.servlet.http.HttpSession;
 @Controller
 public class StockExchController {
     @Autowired
+    @Qualifier("userServiceIMPL")
     private UserService userService;
+    @Autowired
+    @Qualifier("order_bookServiceIMPL")
     private Order_bookService order_bookService;
+    @Autowired
+    @Qualifier("orderServiceIMPL")
+    private OrderService orderService;
+    @Autowired
+    @Qualifier("buyOrderServiceIMPL")
     private BuyOrderService buyOrderService;
+    @Autowired
+    @Qualifier("sellOrderServiceIMPL")
     private SellOrderService sellOrderService;
     User user;
     HttpSession userSession;
@@ -154,15 +167,20 @@ public class StockExchController {
         if (request.getParameter("cancel") != null) {
             int orderID = Integer.parseInt(request.getParameter("id"));
             List<Orders> orderList = user.getOrders();
-            for (Orders o : orderList) {
-                if (o.getOrder_ID() == orderID) {
-                    orderList.remove(o);
+            Iterator<Orders> it = orderList.iterator();
+            while (it.hasNext()) {
+                Orders x = it.next();
+                if (x.getOrder_ID() == orderID) {
+                    System.out.println(x);
+                    it.remove();
+                    orderService.deleteOrderByID(orderID);
                 }
             }
             user.setOrders(orderList);
             userSession.setAttribute("user", user);
             System.out.println("DELETED\n\n\n\n");
         }
+
         if (request.getParameter("submit") != null) {
             Order_book stock = order_bookService.findByName((String) request.getParameter("stock"));
             String type = (String) request.getParameter("type");
@@ -170,12 +188,14 @@ public class StockExchController {
             int quantity = Integer.parseInt(request.getParameter("quantity"));
             System.out.println(quantity);
             double price = Double.parseDouble(request.getParameter("price"));
-            if (type == "BUY") {
+            if (type.equals("BUY")) {
+                System.out.println("HELLO");
                 Orders temp = new BuyOrder(user, stock, quantity, price);
                 buyOrderService.addOrder(temp);
                 System.out.println("added");
                 buyOrderService.matchSellOrder((BuyOrder) temp);
             } else if (type == "SELL") {
+                System.out.println("HELLO");
                 Orders temp = new SellOrder(user, stock, quantity, price);
                 sellOrderService.addOrder(temp);
                 sellOrderService.matchBuyOrder((SellOrder) temp);

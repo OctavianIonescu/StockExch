@@ -14,6 +14,8 @@ import jakarta.transaction.Transactional;
 public interface BuyOrderRepo extends JpaRepository<BuyOrder, Integer> {
 
     @Query("DELETE from BuyOrder WHERE order_ID = :order_ID")
+    @Transactional
+    @Modifying
     public int deleteOrderByID(@Param("order_ID") int iD);
 
     @Query("UPDATE BuyOrder SET status = 'FULFILLED' WHERE order_ID = :order_ID")

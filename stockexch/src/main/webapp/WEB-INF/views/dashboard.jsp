@@ -447,7 +447,13 @@
                                             <td>
                                                 <%= o.getStatus() %>
                                             </td>
-                                            <td class="action"><a href="#">Cancel</a></td>
+                                            <td class="action">
+                                                <form method="POST">
+                                                    <input type="text" name="id" value="<%= o.getOrder_ID() %>"
+                                                        style="display:none">
+                                                    <input type="submit" name="cancel" value="cancel">
+                                                </form></a>
+                                            </td>
                                         </tr>
                                         <% } else { %>
                                             <tr class="sell">
@@ -470,7 +476,13 @@
                                                 <td>
                                                     <%= o.getStatus() %>
                                                 </td>
-                                                <td class="action"><a href="#">Cancel</a></td>
+                                                <td class="action">
+                                                    <form method="POST">
+                                                        <input type="text" name="id" value="<%= o.getOrder_ID() %>"
+                                                            style="display:none">
+                                                        <input type="submit" name="cancel" value="cancel">
+                                                    </form></a>
+                                                </td>
                                             </tr>
                                             <% } } %>
                                 </tbody>
@@ -490,7 +502,7 @@
                                     <input type="number" id="quantity" name="quantity" required />
                                     <label for="price">Price:</label>
                                     <input type="number" id="price" name="price" step="0.01" required />
-                                    <input type="submit" value="submit" />
+                                    <input type="submit" name="submit" value="submit" />
                                 </form>
                             </div>
                         </div>

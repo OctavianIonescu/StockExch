@@ -20,7 +20,7 @@ public class Orders {
     @Column(name = "order_ID")
     private int order_ID;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.MERGE)
     private User user;
 
     @ManyToOne(cascade = CascadeType.ALL)

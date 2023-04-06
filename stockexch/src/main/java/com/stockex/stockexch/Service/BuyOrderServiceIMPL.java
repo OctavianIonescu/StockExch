@@ -20,11 +20,6 @@ public class BuyOrderServiceIMPL extends OrderServiceIMPL implements BuyOrderSer
     private OrdersRepo orderrRepo;
     private SellOrderRepo sellRepo;
 
-    public BuyOrder addOrder(BuyOrder order) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'addOrder'");
-    }
-
     @Override
     public int deleteOrderByID(int ID) {
         return buyOrderRepo.deleteOrderByID(ID);

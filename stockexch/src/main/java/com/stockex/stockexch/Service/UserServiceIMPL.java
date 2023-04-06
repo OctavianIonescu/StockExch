@@ -11,7 +11,6 @@ import com.stockex.stockexch.Repos.*;
 import com.stockex.stockexch.Entities.*;
 
 @Service
-@Primary
 public class UserServiceIMPL implements UserService {
 
     @Autowired
