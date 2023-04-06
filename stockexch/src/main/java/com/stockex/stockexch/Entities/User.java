@@ -40,7 +40,7 @@ public class User {
     @NotNull
     private String user_password;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
     private List<Orders> orders;
 
     @Column(name = "roles")

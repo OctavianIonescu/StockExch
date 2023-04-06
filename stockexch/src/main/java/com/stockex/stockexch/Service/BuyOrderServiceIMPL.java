@@ -1,6 +1,7 @@
 package com.stockex.stockexch.Service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.stockex.stockexch.Entities.BuyOrder;
 import com.stockex.stockexch.Entities.Orders;
@@ -11,6 +12,7 @@ import com.stockex.stockexch.Repos.SellOrderRepo;
 
 import jakarta.persistence.NoResultException;
 
+@Service
 public class BuyOrderServiceIMPL extends OrderServiceIMPL implements BuyOrderService {
 
     @Autowired

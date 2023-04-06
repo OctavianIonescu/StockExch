@@ -44,4 +44,9 @@ public class Orders {
         this.amount = amount;
         this.price = price;
     }
+
+    @Transient
+    public String getDiscriminatorValue() {
+        return this.getClass().getAnnotation(DiscriminatorValue.class).value();
+    }
 }

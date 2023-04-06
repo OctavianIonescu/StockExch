@@ -1,12 +1,23 @@
 package com.stockex.stockexch.Controllers;
 
 import java.io.IOException;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.stockex.stockexch.Entities.BuyOrder;
+import com.stockex.stockexch.Entities.Order_book;
+import com.stockex.stockexch.Entities.Orders;
+import com.stockex.stockexch.Entities.SellOrder;
 import com.stockex.stockexch.Entities.User;
+import com.stockex.stockexch.Service.BuyOrderService;
+import com.stockex.stockexch.Service.OrderService;
+import com.stockex.stockexch.Service.Order_bookService;
+import com.stockex.stockexch.Service.SellOrderService;
 import com.stockex.stockexch.Service.UserService;
 
 import jakarta.servlet.ServletException;
@@ -18,6 +29,9 @@ import jakarta.servlet.http.HttpSession;
 public class StockExchController {
     @Autowired
     private UserService userService;
+    private Order_bookService order_bookService;
+    private BuyOrderService buyOrderService;
+    private SellOrderService sellOrderService;
     User user;
     HttpSession userSession;
 
@@ -132,4 +146,43 @@ public class StockExchController {
             return "change_details";
     }
 
+    @RequestMapping(value = "/dashboard", method = { RequestMethod.GET, RequestMethod.POST })
+    public String dashboard(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        userSession = request.getSession(true);
+        user = (User) userSession.getAttribute("user");
+        if (request.getParameter("cancel") != null) {
+            int orderID = Integer.parseInt(request.getParameter("id"));
+            List<Orders> orderList = user.getOrders();
+            for (Orders o : orderList) {
+                if (o.getOrder_ID() == orderID) {
+                    orderList.remove(o);
+                }
+            }
+            user.setOrders(orderList);
+            userSession.setAttribute("user", user);
+            System.out.println("DELETED\n\n\n\n");
+        }
+        if (request.getParameter("submit") != null) {
+            Order_book stock = order_bookService.findByName((String) request.getParameter("stock"));
+            String type = (String) request.getParameter("type");
+            System.out.println(type);
+            int quantity = Integer.parseInt(request.getParameter("quantity"));
+            System.out.println(quantity);
+            double price = Double.parseDouble(request.getParameter("price"));
+            if (type == "BUY") {
+                Orders temp = new BuyOrder(user, stock, quantity, price);
+                buyOrderService.addOrder(temp);
+                System.out.println("added");
+                buyOrderService.matchSellOrder((BuyOrder) temp);
+            } else if (type == "SELL") {
+                Orders temp = new SellOrder(user, stock, quantity, price);
+                sellOrderService.addOrder(temp);
+                sellOrderService.matchBuyOrder((SellOrder) temp);
+            }
+
+        }
+
+        return "dashboard";
+    }
 }

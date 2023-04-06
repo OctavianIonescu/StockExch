@@ -429,25 +429,23 @@
 				<!-- Navbar Section -->
 				<nav class="navbar">
 					<div class="navbar__container">
-						<a href="#home" id="navbar__logo">ON TRADING</a>
+						<a href="/" id="navbar__logo">ON TRADING</a>
 						<div class="navbar__toggle" id="mobile-menu">
 							<span class="bar"></span> <span class="bar"></span>
 							<span class="bar"></span>
 						</div>
-						<ul class="navbar__menu">
-							<li class="navbar__item">
-								<a href="/" class="navbar__links" id="exp-page">Home</a>
-							</li>
 
-							<li class="navbar__item">
-								<a href="#edu" class="navbar__links" id="edu-page">About</a>
-							</li>
-							<li class="navbar__item">
-								<a href="#projects" class="navbar__links" id="projects-page">Services</a>
-							</li>
-							<li class="navbar__item">
-								<a href="/login" class="navbar__links" id="exp-page">Log In</a>
-							</li>
+
+						<li class="navbar__item">
+							<a href="#edu" class="navbar__links" id="edu-page">About</a>
+						</li>
+
+						<li class="navbar__item">
+							<a href="/dashboard" class="navbar__links" id="projects-page">Dash</a>
+						</li>
+						<li class="navbar__item">
+							<a href="/logout" class="navbar__links" id="exp-page">Logout</a>
+						</li>
 						</ul>
 					</div>
 				</nav>
