@@ -43,6 +43,7 @@ public class Orders {
         this.order_book = order_book;
         this.amount = amount;
         this.price = price;
+        this.status = "PENDING";
     }
 
     @Transient

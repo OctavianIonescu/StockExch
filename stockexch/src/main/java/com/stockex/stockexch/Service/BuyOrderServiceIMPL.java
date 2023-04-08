@@ -17,7 +17,9 @@ public class BuyOrderServiceIMPL extends OrderServiceIMPL implements BuyOrderSer
 
     @Autowired
     private BuyOrderRepo buyOrderRepo;
-    private OrdersRepo orderrRepo;
+    @Autowired
+    private OrdersRepo orderRepo;
+    @Autowired
     private SellOrderRepo sellRepo;
 
     @Override
@@ -52,21 +54,21 @@ public class BuyOrderServiceIMPL extends OrderServiceIMPL implements BuyOrderSer
                 BuyOrder temp1 = new BuyOrder(buyOrder.getUser(), buyOrder.getOrder_book(), temp.getAmount(),
                         temp.getPrice());
                 buyOrderRepo.save(temp1);
-                orderrRepo.setFulfilledByID(temp.getOrder_ID());
+                orderRepo.setFulfilledByID(temp.getOrder_ID());
                 buyOrder.setAmount(buyOrder.getAmount() - temp.getAmount());
-                orderrRepo.setAmountByID(buyOrder.getOrder_ID(), buyOrder.getAmount());
+                orderRepo.setAmountByID(buyOrder.getOrder_ID(), buyOrder.getAmount());
                 return true;
             } else if (temp.getAmount() > buyOrder.getAmount()) {
                 SellOrder temp1 = new SellOrder(temp.getUser(), temp.getOrder_book(), buyOrder.getAmount(),
                         buyOrder.getPrice());
                 sellRepo.save(temp1);
-                orderrRepo.setFulfilledByID(buyOrder.getOrder_ID());
+                orderRepo.setFulfilledByID(buyOrder.getOrder_ID());
                 temp.setAmount(temp.getAmount() - buyOrder.getAmount());
-                orderrRepo.setAmountByID(temp.getOrder_ID(), temp.getAmount());
+                orderRepo.setAmountByID(temp.getOrder_ID(), temp.getAmount());
                 return true;
             } else {
-                orderrRepo.setFulfilledByID(buyOrder.getOrder_ID());
-                orderrRepo.setFulfilledByID(temp.getOrder_ID());
+                orderRepo.setFulfilledByID(buyOrder.getOrder_ID());
+                orderRepo.setFulfilledByID(temp.getOrder_ID());
 
                 return true;
             }
