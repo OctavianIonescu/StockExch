@@ -426,13 +426,14 @@
                                     <% User user=(User) request.getSession().getAttribute("user"); List<Orders>
                                         orderList = user.getOrders();
                                         for(Orders o : orderList){
-                                        if(o.getDiscriminatorValue() == "BUY"){%>
+                                        System.out.println(o.getDiscriminatorValue());
+                                        if(o.getDiscriminatorValue().equals("BUY")){%>
                                         <tr class="buy">
                                             <td>
                                                 <%= o.getOrder_ID() %>
                                             </td>
                                             <td>
-                                                <%= o.getOrder_book() %>
+                                                <%= o.getOrder_book().getCompany_name() %>
                                             </td>
                                             <td>BUY</td>
                                             <td>
@@ -455,7 +456,7 @@
                                                 </form></a>
                                             </td>
                                         </tr>
-                                        <% } else { %>
+                                        <% } else if(o.getDiscriminatorValue().equals("SELL")) { %>
                                             <tr class="sell">
                                                 <td>
                                                     <%= o.getOrder_ID() %>

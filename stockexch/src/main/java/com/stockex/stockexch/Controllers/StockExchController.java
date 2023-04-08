@@ -1,6 +1,7 @@
 package com.stockex.stockexch.Controllers;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
@@ -183,6 +184,7 @@ public class StockExchController {
 
         if (request.getParameter("submit") != null) {
             Order_book stock = order_bookService.findByName((String) request.getParameter("stock"));
+            System.out.println(stock.getCompany_name());
             String type = (String) request.getParameter("type");
             System.out.println(type);
             int quantity = Integer.parseInt(request.getParameter("quantity"));
@@ -192,13 +194,24 @@ public class StockExchController {
                 System.out.println("HELLO");
                 Orders temp = new BuyOrder(user, stock, quantity, price);
                 buyOrderService.addOrder(temp);
+
                 System.out.println("added");
-                buyOrderService.matchSellOrder((BuyOrder) temp);
-            } else if (type == "SELL") {
+                try {
+                    buyOrderService.matchSellOrder((BuyOrder) temp);
+
+                } catch (Exception e) {
+                    return "dashboard";
+                }
+
+            } else if (type.equals("SELL")) {
                 System.out.println("HELLO");
                 Orders temp = new SellOrder(user, stock, quantity, price);
                 sellOrderService.addOrder(temp);
-                sellOrderService.matchBuyOrder((SellOrder) temp);
+                try {
+                    sellOrderService.matchBuyOrder((SellOrder) temp);
+                } catch (Exception e) {
+                    return "dashboard";
+                }
             }
 
         }
